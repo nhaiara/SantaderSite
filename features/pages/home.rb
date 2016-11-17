@@ -16,7 +16,6 @@ class Home
 		end
 	end
 
-
 	def last_window
 		page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)	
 	end

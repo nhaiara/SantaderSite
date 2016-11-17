@@ -1,13 +1,13 @@
 Dado(/^que eu estou na home do site Santander$/) do
-  Home.new.url
+ 	Home.new.url
 end
 
 Quando(/^eu clicar no menu inferior Agências$/) do
-  Home.new.click_something("Agência")
+ 	Home.new.click_something("Agência")
 end
 
 Quando(/^clicar no link "([^"]*)"$/) do |link|
-  Home.new.click_something(link)
+ 	Home.new.click_something(link)
 end
 
 Quando(/^preencher o campo CEP$/) do
