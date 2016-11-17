@@ -1,3 +1,3 @@
-Dado(/^que eu estou na Agency do site Santander$/) do
+Dado(/^que eu estou na home do site Santander$/) do
  	Home.new.url
 end
