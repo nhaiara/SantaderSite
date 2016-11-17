@@ -19,10 +19,26 @@ Quando(/^clicar no botão buscar$/) do
 	Home.new.click_search
 end
 
+Quando(/^clicar no botão buscar agência$/) do
+	Home.new.click_search_agency
+end
+
 Quando(/^selecionar um endereço$/) do
  	Home.new.select_address
 end
 
 Então(/^aparecerá as agências disponíveis$/) do
 	Home.new.verify_content
+end
+
+Quando(/^clicar na aba Busque Agência no Bairro$/) do
+  	Home.new.click_agency
+end
+
+Quando(/^selecionar os dados obrigatórios$/) do
+  	Home.new.select_data
+end
+
+Então(/^aparecerá as agências disponíveis na aba Busque Agência no Bairro$/) do
+  	Home.new.verify_result
 end
