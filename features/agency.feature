@@ -32,3 +32,10 @@ Funcionalidade: Buscar Agências
 		E preencher os dados obrigatórios
 		E clicar no botão para buscar agência pelo número
 		Então aparecerá a agência solicitada
+
+	@rota
+	Cenario: Buscar agência por minha rota
+		Dado que eu estou na home do site Santander
+		Quando eu clicar no menu inferior Agências
+		E clicar no link "Clique aqui"
+		E clicar na aba para buscar agência por minha rota

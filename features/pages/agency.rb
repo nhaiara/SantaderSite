@@ -41,6 +41,13 @@ class Agency
 		end
 	end
 
+	def click_agency_route
+		last_window
+		within_frame(find("iframe")) do 
+			find("#OpcaoBuscaAgenRota").click
+		end
+	end
+
 	def fill_cep
 		last_window
 		within_frame(find("iframe")) do 

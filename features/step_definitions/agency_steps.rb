@@ -54,3 +54,8 @@ end
 Então(/^aparecerá a agência solicitada$/) do
 	Agency.new.verify_content_agencyNumber
 end
+
+Quando(/^clicar na aba para buscar agência por minha rota$/) do
+	Agency.new.click_agency_route
+	sleep 2
+end
