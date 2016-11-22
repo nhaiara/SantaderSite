@@ -20,6 +20,14 @@ class SearchAgencyNumber < SitePrism::Section
 end
 
 class SearchAgencyRoute < SitePrism::Section
+  element :routeTab, "#OpcaoBuscaAgenRota"
+  element :cepOrigin, "#refCepOrigem"
+  element :cepDestiny, "#refCepDestino"
+  element :addressOrigin, "#refEnderecoOrigem"
+  element :addressDestiny, "#refEnderecoDestino"
+  element :searchOrigin, :css,"#BuscaAgenRotaOrigemForm > ul.botoes > li.alignR > a > img"
+  element :searchDestiny, :css,"#BuscaAgenRotaDestinoForm > ul.botoes > li.alignR > a > img"
+  element :searchWay, :css, "#BuscaAgenRotaOK > ul > li > a > img"
 end
 
 class SearchAgency < SitePrism::Page

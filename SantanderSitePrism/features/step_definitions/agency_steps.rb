@@ -23,7 +23,7 @@ end
 
 Quando(/^selecionar um endereço$/) do
   within_frame(@app.searchAgency.iframe) do
-    @app.searchAgency.near.address.select(ADDRESS['NEAR']['SELECT_ADDRESS'])
+    @app.searchAgency.near.address.select(ADDRESS['NEAR']['ADDRESS'])
   end
 end
 
@@ -77,4 +77,61 @@ end
 
 Então(/^aparecerá a agência solicitada$/) do
   page.has_content?(ADDRESS['NUMBER']['VERIFY_AGENCY'])
+end
+
+Quando(/^clicar na aba para buscar agência por minha rota$/) do
+  @app.agency.last_window
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.routeTab.click
+  end
+end
+
+Quando(/^preencher o CEP de origem$/) do
+  @app.agency.last_window
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.cepOrigin.set ADDRESS['ROUTE']['CEP_ORIGIN']
+    sleep 1
+  end
+end
+
+Quando(/^clicar no botão para buscar agência pela rota de origem$/) do
+  within_frame(@app.searchAgency.iframe) do
+      @app.searchAgency.route.searchOrigin.click
+  end
+end
+
+Quando(/^selecionar um endereço da rota de origem$/) do
+  within_frame(@app.searchAgency.iframe) do
+      @app.searchAgency.route.addressOrigin.select ADDRESS['ROUTE']['ADDRESS_ORIGIN']
+  end
+end
+
+Quando(/^preencher o CEP de destino$/) do
+  @app.agency.last_window
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.cepDestiny.set ADDRESS['ROUTE']['CEP_DESTINY']
+    sleep 1
+  end
+end
+
+Quando(/^clicar no botão para buscar agência pela rota de destino$/) do
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.searchDestiny.click
+  end
+end
+
+Quando(/^selecionar um endereço da rota de destino$/) do
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.addressDestiny.select ADDRESS['ROUTE']['ADDRESS_DESTINY']
+  end
+end
+
+Quando(/^clicar no botão para buscar agências no caminho$/) do
+  within_frame(@app.searchAgency.iframe) do
+    @app.searchAgency.route.searchWay.click
+  end
+end
+
+Então(/^aparecerá as agências disponíveis no caminho entre as rotas$/) do
+  page.has_content?(ADDRESS['ROUTE']['VERIFY_AGENCY'])
 end
